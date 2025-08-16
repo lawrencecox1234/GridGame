@@ -17,12 +17,13 @@ public class MainVariables {
     static Context gameActivityContext;
 
     static boolean exitButton;
+    static boolean gameStarted;
 
     static boolean playerMoveRight;
     static boolean playerMoveLeft;
     static boolean playerMoveUp;
     static boolean playerMoveDown;
-    static boolean playerTap;
+    static boolean playerSwipe;
 
     static boolean reachedEnd;
 
@@ -53,11 +54,12 @@ public class MainVariables {
     public static void setGameConstants(){
         MainVariables.VELOCITY_OBSTACLES = 6;
         MainVariables.exitButton = false;
+        MainVariables.gameStarted = false;
         MainVariables.playerMoveRight = false;
         MainVariables.playerMoveLeft = false;
         MainVariables.playerMoveUp = false;
         MainVariables.playerMoveDown = false;
-        MainVariables.playerTap = false;
+        MainVariables.playerSwipe = false;
         MainVariables.reachedEnd = false;
         MainVariables.playerShiftHorizontal = MainVariables.SCREEN_WIDTH/6;
         MainVariables.playerShiftVertical = MainVariables.SCREEN_HEIGHT/4;

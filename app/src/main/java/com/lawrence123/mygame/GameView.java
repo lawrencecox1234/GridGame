@@ -76,6 +76,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                         MainVariables.playerMoveDown = false;
                         MainVariables.playerMoveUp = false;
                         MainVariables.playerMoveRight = true;
+                        MainVariables.playerSwipe = true;
                     }
 
                     // Right to left swipe action
@@ -84,6 +85,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                         MainVariables.playerMoveDown = false;
                         MainVariables.playerMoveUp = false;
                         MainVariables.playerMoveLeft = true;
+                        MainVariables.playerSwipe = true;
                     }
 
                 }
@@ -95,6 +97,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                         MainVariables.playerMoveLeft = false;
                         MainVariables.playerMoveUp = false;
                         MainVariables.playerMoveDown = true;
+                        MainVariables.playerSwipe = true;
                     }
 
                     // Down to up swipe action
@@ -103,6 +106,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                         MainVariables.playerMoveLeft = false;
                         MainVariables.playerMoveDown = false;
                         MainVariables.playerMoveUp = true;
+                        MainVariables.playerSwipe = true;
                     }
 
                 }
@@ -111,8 +115,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     // consider as something else - a screen tap for example
                     if(MainVariables.getGameEngine().gameState == 0){
                         MainVariables.getGameEngine().gameState = 1;
-                    } else if (MainVariables.getGameEngine().gameState == 1){
-                        MainVariables.playerTap = true;
                     }
 
                 }

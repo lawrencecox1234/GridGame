@@ -34,9 +34,9 @@ public class GameActivity extends AppCompatActivity {
         buttonExit.setText("Exit");
         buttonExit.setId(123456);
 
-        Button buttonShoot = new Button(this);
-        buttonShoot.setText("Shoot");
-        buttonShoot.setId(789);
+        Button buttonPause = new Button(this);
+        buttonPause.setText("Pause");
+        buttonPause.setId(789);
 
         buttonExit.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -45,31 +45,34 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        buttonShoot.setOnClickListener(new View.OnClickListener(){
+        buttonPause.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(GameActivity.this, "Shoot clicked",
-                        Toast.LENGTH_SHORT).show();
+                if (MainVariables.getGameEngine().gameState == 1) {
+                    MainVariables.getGameEngine().gameState = 0;
+                } else if (MainVariables.getGameEngine().gameState == 0) {
+                    MainVariables.getGameEngine().gameState = 1;
+                }
             }
         });
 
         RelativeLayout.LayoutParams bExit = new RelativeLayout.LayoutParams(400,200);
-        RelativeLayout.LayoutParams bShoot = new RelativeLayout.LayoutParams(400,400);
+        RelativeLayout.LayoutParams bPause = new RelativeLayout.LayoutParams(400,200);
         //LinearLayout.LayoutParams bExit = new LinearLayout.LayoutParams(10, 100);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.MATCH_PARENT);
 
         relativeLayout.setLayoutParams(params);
         relativeLayout.addView(buttonExit);
-        relativeLayout.addView(buttonShoot);
+        relativeLayout.addView(buttonPause);
 
         bExit.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
         bExit.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
         buttonExit.setLayoutParams(bExit);
 
-        bShoot.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
-        bShoot.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
-        buttonShoot.setLayoutParams(bShoot);
+        bPause.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+        bPause.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
+        buttonPause.setLayoutParams(bPause);
 
         frameLayout.addView(gameView);
         frameLayout.addView(relativeLayout);

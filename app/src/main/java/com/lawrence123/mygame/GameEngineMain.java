@@ -89,7 +89,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowRight(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerTap == true){
+                if (MainVariables.playerSwipe == true){
 
                     move.start();
 
@@ -98,7 +98,7 @@ public class GameEngineMain {
                         player.setX(player.getX() + MainVariables.playerShiftHorizontal);
                         canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowRight(), player.getX(), player.getY(), null);
                     }
-                    MainVariables.playerTap = false;
+                    MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveRight();
                     //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
@@ -110,7 +110,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowLeft(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerTap == true) {
+                if (MainVariables.playerSwipe == true) {
 
                     move.start();
 
@@ -119,7 +119,7 @@ public class GameEngineMain {
                         player.setX(player.getX() - MainVariables.playerShiftHorizontal);
                         canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowLeft(), player.getX(), player.getY(), null);
                     }
-                    MainVariables.playerTap = false;
+                    MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveLeft();
                     //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
@@ -131,7 +131,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowDown(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerTap == true) {
+                if (MainVariables.playerSwipe == true) {
 
                     move.start();
 
@@ -139,7 +139,7 @@ public class GameEngineMain {
                         player.setY(player.getY() + MainVariables.playerShiftVertical);
                         canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowDown(), player.getX(), player.getY(), null);
                     }
-                    MainVariables.playerTap = false;
+                    MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveDown();
                     //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
@@ -151,7 +151,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowUp(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerTap == true) {
+                if (MainVariables.playerSwipe == true) {
 
                     move.start();
 
@@ -159,7 +159,7 @@ public class GameEngineMain {
                         player.setY(player.getY() - MainVariables.playerShiftVertical);
                         canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowUp(), player.getX(), player.getY(), null);
                     }
-                    MainVariables.playerTap = false;
+                    MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveUp();
                     //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
@@ -190,13 +190,20 @@ public class GameEngineMain {
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowRight(), player.getX(), player.getY(), null);
 
                 MainVariables.playerMoveRight = true;
+                MainVariables.gameStarted = true;
 
             }
 
-            canvas.drawText("Score: " + points, 0, TEXT_SIZE, scorePaint);
+            canvas.drawText("Score: " + points, 20, TEXT_SIZE, scorePaint);
 
         }
     }
+
+    //public void collisionOrExitButton(Canvas canvas){
+
+
+
+    //}
 
     public void updateAndDrawObstacles(Canvas canvas) {
 

@@ -52,6 +52,18 @@ public class GameEngineBlocks {
 
     }
 
+    public int getStaticBlockPositionX(int i){
+
+        return staticBlocks.get(i).getX();
+
+    }
+
+    public int getStaticBlockPositionY(int i){
+
+        return staticBlocks.get(i).getY();
+
+    }
+
     public void generateRandomPositions(){
 
         allXPositions = new HashSet<Integer>();
@@ -83,24 +95,28 @@ public class GameEngineBlocks {
 
     }
 
-    public void drawBlock(Canvas canvas){
+    public void drawBlock(Canvas canvas) {
 
-        if (MainVariables.reachedEnd == true){
+        if (MainVariables.getGameEngine().gameState == 1) {
 
-            randomPositionsDone = false;
+            if (MainVariables.reachedEnd == true) {
 
-            while (!randomPositionsDone) {
-                generateRandomPositions();
+                randomPositionsDone = false;
+
+                while (!randomPositionsDone) {
+                    generateRandomPositions();
+                }
+
+                MainVariables.reachedEnd = false;
             }
 
-            MainVariables.reachedEnd = false;
-        }
+            for (int i = 0; i < 4; i++) {
+                int newX = blockPixelX[getStaticBlockPositionX(i)];
+                int newY = blockPixelY[getStaticBlockPositionY(i)];
 
-        for (int i=0; i<4; i++) {
-            int newX = blockPixelX[staticBlocks.get(i).getX()];
-            int newY = blockPixelY[staticBlocks.get(i).getY()];
+                canvas.drawBitmap(MainVariables.getBitmapAsset().getIceBox(), newX + 100, newY + 50, null);
+            }
 
-            canvas.drawBitmap(MainVariables.getBitmapAsset().getIceBox(), newX + 100, newY + 50, null);
         }
 
     }
