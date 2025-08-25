@@ -29,7 +29,6 @@ public class GameThread extends Thread {
                     MainVariables.getGameEngine().updateAndDrawBackgroundImage(canvas);
                     MainVariables.getGameEngineBlocks().drawBlock(canvas);
                     MainVariables.getGameEngine().updateAndDrawPlayer(canvas);
-                    //MainVariables.getGameEngine().collisionOrExitButton(canvas);
                     MainVariables.getGameEngine().updateAndDrawObstacles(canvas);
                     MainVariables.getGameEngine().collisionCheck();
                     MainVariables.getGameEngine().tapToStart(canvas);

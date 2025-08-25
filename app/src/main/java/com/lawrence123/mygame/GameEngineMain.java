@@ -68,11 +68,87 @@ public class GameEngineMain {
 
     }
 
+    public boolean checkIfStaticCollision(int positionX, int positionY){
+
+        boolean staticBlockCollision = false;
+
+        for (int i = 0; i < 4; i++) {
+
+            int blockPositionX = MainVariables.getGameEngineBlocks().getStaticBlockPositionX(i);
+            int blockPositionY = MainVariables.getGameEngineBlocks().getStaticBlockPositionY(i);
+
+            if ( (positionX == blockPositionX) && (positionY == blockPositionY) ) {
+                staticBlockCollision = true;
+                MainVariables.playerSwipe = false;
+            }
+
+        }
+
+        return staticBlockCollision;
+
+    }
+
+    public boolean checkStaticObstacleCollision(String movement) {
+
+        boolean collisionStaticBlock = false;
+
+        /*
+
+        if (movement.equals("right")) {
+
+            int nextPositionX = MainVariables.playerPosition.getPlayerPositionX() + 1;
+            int nextPositionY = MainVariables.playerPosition.getPlayerPositionY();
+
+            collisionStaticBlock = checkIfStaticCollision(nextPositionX, nextPositionY);
+
+        } else if (movement.equals("left")) {
+
+            int nextPositionX = MainVariables.playerPosition.getPlayerPositionX() - 1;
+            if (nextPositionX < 1){
+                nextPositionX = 1;
+            }
+            int nextPositionY = MainVariables.playerPosition.getPlayerPositionY();
+
+            collisionStaticBlock = checkIfStaticCollision(nextPositionX, nextPositionY);
+
+        } else if (movement.equals("up")) {
+
+            int nextPositionX = MainVariables.playerPosition.getPlayerPositionX();
+            int nextPositionY = MainVariables.playerPosition.getPlayerPositionY() - 1;
+            if (nextPositionY < 1){
+                nextPositionY = 1;
+            }
+
+            collisionStaticBlock = checkIfStaticCollision(nextPositionX, nextPositionY);
+
+        } else if (movement.equals("down")) {
+
+            int nextPositionX = MainVariables.playerPosition.getPlayerPositionX();
+            int nextPositionY = MainVariables.playerPosition.getPlayerPositionY() + 1;
+            if (nextPositionY > 4){
+                nextPositionY = 4;
+            }
+
+            collisionStaticBlock = checkIfStaticCollision(nextPositionX, nextPositionY);
+
+        } else {
+            // The if statement should never go here
+            collisionStaticBlock = true;
+
+        }
+
+
+         */
+
+        return collisionStaticBlock;
+
+    }
+
     public void updateAndDrawPlayer(Canvas canvas) {
         if (gameState == 1) {
 
             // The player has reached the end, do point increment and restart player position to the left
-            if (MainVariables.exitButton == false && collision == false && MainVariables.playerPosition.playerPositionX >= 6) {
+            if (MainVariables.exitButton == false && collision == false && MainVariables.playerPosition.playerPositionX >= 5) {
 
                 points++;
 
@@ -80,8 +156,8 @@ public class GameEngineMain {
                 player.setY(20);
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowRight(), player.getX(), player.getY(), null);
 
-                MainVariables.playerPosition.setPlayerPositionX(1);
-                MainVariables.playerPosition.setPlayerPositionY(1);
+                MainVariables.playerPosition.setPlayerPositionX(0);
+                MainVariables.playerPosition.setPlayerPositionY(0);
 
                 MainVariables.reachedEnd = true;
 
@@ -89,7 +165,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowRight(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerSwipe == true){
+                if ( (MainVariables.playerSwipe == true) && (checkStaticObstacleCollision("right") == false) ){
 
                     move.start();
 
@@ -101,8 +177,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveRight();
-                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -110,7 +186,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowLeft(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerSwipe == true) {
+                if ( (MainVariables.playerSwipe == true) && (checkStaticObstacleCollision("left") == false) ) {
 
                     move.start();
 
@@ -122,8 +198,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveLeft();
-                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -131,7 +207,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowDown(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerSwipe == true) {
+                if ( (MainVariables.playerSwipe == true) && (checkStaticObstacleCollision("down") == false) ) {
 
                     move.start();
 
@@ -142,8 +218,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveDown();
-                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -151,7 +227,7 @@ public class GameEngineMain {
 
                 canvas.drawBitmap(MainVariables.getBitmapAsset().getArrowUp(), player.getX(), player.getY(), null);
 
-                if (MainVariables.playerSwipe == true) {
+                if ( (MainVariables.playerSwipe == true) && (checkStaticObstacleCollision("up") == false) ) {
 
                     move.start();
 
@@ -162,8 +238,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveUp();
-                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -198,12 +274,6 @@ public class GameEngineMain {
 
         }
     }
-
-    //public void collisionOrExitButton(Canvas canvas){
-
-
-
-    //}
 
     public void updateAndDrawObstacles(Canvas canvas) {
 
@@ -244,6 +314,8 @@ public class GameEngineMain {
 
     public void collisionCheck(){
 
+        /*
+
         if (((player.pX + MainVariables.getBitmapAsset().getArrowUpWidth() >= obstacle1.cX) && (player.pX <= obstacle1.cX + obstacle1.width))
                 && ((player.pY + MainVariables.getBitmapAsset().getArrowUpHeight() >= obstacle1.cY) && (player.pY <= obstacle1.cY + obstacle1.height))) {
 
@@ -267,6 +339,8 @@ public class GameEngineMain {
 
             collision = true;
         }
+
+        */
 
     }
 
