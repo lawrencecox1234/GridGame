@@ -92,8 +92,6 @@ public class GameEngineMain {
 
         boolean collisionStaticBlock = false;
 
-        /*
-
         if (movement.equals("right")) {
 
             int nextPositionX = MainVariables.playerPosition.getPlayerPositionX() + 1;
@@ -104,8 +102,8 @@ public class GameEngineMain {
         } else if (movement.equals("left")) {
 
             int nextPositionX = MainVariables.playerPosition.getPlayerPositionX() - 1;
-            if (nextPositionX < 1){
-                nextPositionX = 1;
+            if (nextPositionX < 0){
+                nextPositionX = 0;
             }
             int nextPositionY = MainVariables.playerPosition.getPlayerPositionY();
 
@@ -115,8 +113,8 @@ public class GameEngineMain {
 
             int nextPositionX = MainVariables.playerPosition.getPlayerPositionX();
             int nextPositionY = MainVariables.playerPosition.getPlayerPositionY() - 1;
-            if (nextPositionY < 1){
-                nextPositionY = 1;
+            if (nextPositionY < 0){
+                nextPositionY = 0;
             }
 
             collisionStaticBlock = checkIfStaticCollision(nextPositionX, nextPositionY);
@@ -125,8 +123,8 @@ public class GameEngineMain {
 
             int nextPositionX = MainVariables.playerPosition.getPlayerPositionX();
             int nextPositionY = MainVariables.playerPosition.getPlayerPositionY() + 1;
-            if (nextPositionY > 4){
-                nextPositionY = 4;
+            if (nextPositionY > 3){
+                nextPositionY = 3;
             }
 
             collisionStaticBlock = checkIfStaticCollision(nextPositionX, nextPositionY);
@@ -136,9 +134,6 @@ public class GameEngineMain {
             collisionStaticBlock = true;
 
         }
-
-
-         */
 
         return collisionStaticBlock;
 
@@ -177,8 +172,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveRight();
-                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -198,8 +193,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveLeft();
-                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -218,8 +213,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveDown();
-                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -238,8 +233,8 @@ public class GameEngineMain {
                     MainVariables.playerSwipe = false;
 
                     MainVariables.playerPosition.playerMoveUp();
-                    System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
-                    System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
+                    //System.out.println("X: " + MainVariables.playerPosition.getPlayerPositionX());
+                    //System.out.println("Y: " + MainVariables.playerPosition.getPlayerPositionY());
 
                 }
 
@@ -314,8 +309,6 @@ public class GameEngineMain {
 
     public void collisionCheck(){
 
-        /*
-
         if (((player.pX + MainVariables.getBitmapAsset().getArrowUpWidth() >= obstacle1.cX) && (player.pX <= obstacle1.cX + obstacle1.width))
                 && ((player.pY + MainVariables.getBitmapAsset().getArrowUpHeight() >= obstacle1.cY) && (player.pY <= obstacle1.cY + obstacle1.height))) {
 
@@ -339,8 +332,6 @@ public class GameEngineMain {
 
             collision = true;
         }
-
-        */
 
     }
 
