@@ -56,8 +56,8 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        RelativeLayout.LayoutParams bExit = new RelativeLayout.LayoutParams(400,200);
-        RelativeLayout.LayoutParams bPause = new RelativeLayout.LayoutParams(400,200);
+        RelativeLayout.LayoutParams bExit = new RelativeLayout.LayoutParams(300,200);
+        RelativeLayout.LayoutParams bPause = new RelativeLayout.LayoutParams(300,200);
         //LinearLayout.LayoutParams bExit = new LinearLayout.LayoutParams(10, 100);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.MATCH_PARENT);

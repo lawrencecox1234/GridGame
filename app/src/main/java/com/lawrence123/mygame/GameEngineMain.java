@@ -64,7 +64,10 @@ public class GameEngineMain {
 
     public void updateAndDrawBackgroundImage(Canvas canvas) {
 
-        canvas.drawBitmap(MainVariables.getBitmapAsset().getBackground(), 0, 0, null);
+        canvas.drawBitmap(MainVariables.getBitmapAsset().getBackground(),
+                MainVariables.getBitmapAsset().getFrameToDraw(),
+                MainVariables.getBitmapAsset().getWhereToDraw(),
+                null);
 
     }
 

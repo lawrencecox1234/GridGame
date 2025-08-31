@@ -3,6 +3,8 @@ package com.lawrence123.mygame;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
+import android.graphics.RectF;
 
 public class BitmapAssets {
 
@@ -19,7 +21,7 @@ public class BitmapAssets {
 
     public BitmapAssets (Resources res) {
         background = BitmapFactory.decodeResource(res, R.drawable.background);
-        background = scaleBackground(background);
+        background = Bitmap.createScaledBitmap(background, MainVariables.SCREEN_WIDTH, MainVariables.SCREEN_HEIGHT, false);
 
         arrowUp = BitmapFactory.decodeResource(res, R.drawable.arrowup);
         arrowRight = BitmapFactory.decodeResource(res, R.drawable.arrowright);
@@ -30,6 +32,14 @@ public class BitmapAssets {
         box = BitmapFactory.decodeResource(res, R.drawable.box);
         iceBox = BitmapFactory.decodeResource(res, R.drawable.icebox);
         tapToStart = BitmapFactory.decodeResource(res, R.drawable.tap_to_start);
+    }
+
+    public Rect getFrameToDraw(){
+        return new Rect(0, 0, getBackgroundWidth(), getBackgroundHeight());
+    }
+
+    public RectF getWhereToDraw(){
+        return new RectF(0, 0, MainVariables.SCREEN_WIDTH, MainVariables.SCREEN_HEIGHT);
     }
 
     public Bitmap getArrowUp(){
@@ -106,9 +116,4 @@ public class BitmapAssets {
     public int getTapToStartWidth(){ return tapToStart.getWidth(); }
     public int getTapToStartHeight(){ return tapToStart.getHeight(); }
 
-    public Bitmap scaleBackground(Bitmap bitmap){
-        float widthHeightRatio = getBackgroundWidth() / getBackgroundHeight();
-        int backgroundScaledWidth = (int) widthHeightRatio * MainVariables.SCREEN_HEIGHT;
-        return Bitmap.createScaledBitmap(bitmap, backgroundScaledWidth, MainVariables.SCREEN_HEIGHT, false);
-    }
 }
