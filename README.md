@@ -26,26 +26,39 @@
 * I'm able to run this game on both Windows 10 and 11 using "Android Studio Jellyfish | 2023.3.1"
 
 ### How to create and run the program
-* Select "Empty views activity"
-    * Don't select "empty activity" or "no activity"
+* On Android studio, click file, new, new project
+* Click "Empty views activity"
     * In options menu:
         * Ensure Name is "MyGame"
 		* Ensure Package name is "com.lawrence123.mygame"
 		* Choose a good save location
 		* Ensure language is Java
 		* Keep other options the same
+		* Click Finish
+		
+* Wait for the gradle process to sync up (if applicable)
 		
 * Sometimes the Agp and activity version is out of date:
     * Open the gradle/libs.versions.toml file
 	* Change apg version to "8.4.0"
-	* Change activity line to "1.8.0"
+	* Change first activity line to "1.8.0"
 	
 * Copy the contents from "app/src" from Github to "app/src" of your android studio project
 
-* Build the project
+* Either restart android studio or press yes if it asks for a gradle sync
 
 * I recommend selecting a "Pixel 4 API 28" Emulator from the Device Manager menu
+
+* Ensure this Pixel device is selected at the top in the main Android studio window
 
 * Then run the project
 
 * A phone emulator should show and the game should run
+
+### Help
+
+* When loading program on emulator if you get "waiting for all devices to come online" message showing for a very long time:
+    * On device manager, wipe data for device you want to use
+	* Then restart your computer and android studio
+
+* You can use logcat to help debug errors if needed
