@@ -6,14 +6,15 @@
 
 * I took inspiration from the code from the "Android Game Development : Endless Runner Game in Android" course on Udemy by Sandip Bhattacharya to help complete my project
 * This Udemy course game is quite different to my game:
-    * The udemy course game involves a santa character that endless runs and then you tap the screen to jump to avoid the obstacles which move from left to right on the screen. *  * Everytime you jump over an obstacle you gain a point
+    * The udemy course game involves a santa character that endless runs and then you tap the screen to jump to avoid the obstacles which move from left to right on the screen.
+	* Everytime you jump over an obstacle you gain a point
 
 ## My game explanation
 
-* This game involves moving a circular green player across a grided area
-* Swipe left, right, up, down using your fingers to move this player
-* Avoid the falling box obstacles and if you hit one of these the game is over
-* Within the grided area, you're not able to move into a grid containing an ice obstacle
+* This game involves moving a circular green player across a 6 by 4 gridded area
+* Swipe left, right, up, down using your fingers to move this player within the grid
+* Avoid the 5 falling box obstacles and if you hit one of these the game is over
+* Within the grided area, you're not able to move into a section containing an ice obstacle
 * Once you reach the right hand side of grid area:
     * You gain one point
 	* Your character resets to the left
@@ -28,8 +29,11 @@
 * Select "Empty views activity"
     * Don't select "empty activity" or "no activity"
     * In options menu:
-        * Ensure language is Java
-        * Pick name, location and keep other options the same
+        * Ensure Name is "MyGame"
+		* Ensure Package name is "com.lawrence123.mygame"
+		* Choose a good save location
+		* Ensure language is Java
+		* Keep other options the same
 		
 * Sometimes the Agp and activity version is out of date:
     * Open the gradle/libs.versions.toml file
