@@ -41,7 +41,7 @@
 * Sometimes the Agp and activity version is out of date:
     * Open the gradle/libs.versions.toml file
 	* Change apg version to "8.4.0"
-	* Change first activity line to "1.8.0"
+	* Change first "activity" version line to "1.8.0"
 	
 * Remove the contents from app/src in your android studio project
 	
