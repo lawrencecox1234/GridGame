@@ -43,7 +43,9 @@
 	* Change apg version to "8.4.0"
 	* Change first activity line to "1.8.0"
 	
-* Copy the contents from "app/src" from Github to "app/src" on your android studio project
+* Remove the contents from app/src in your android studio project
+	
+* Copy the contents from "app/src" from Github to "app/src" in your android studio project
 
 * Either restart android studio or press yes if it asks for a gradle sync
 
