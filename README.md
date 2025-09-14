@@ -43,7 +43,7 @@
 	* Change apg version to "8.4.0"
 	* Change first activity line to "1.8.0"
 	
-* Copy the contents from "app/src" from Github to "app/src" of your android studio project
+* Copy the contents from "app/src" from Github to "app/src" on your android studio project
 
 * Either restart android studio or press yes if it asks for a gradle sync
 
@@ -61,4 +61,4 @@
     * On device manager, wipe data for the device you want to use
 	* Then restart your computer and android studio
 
-* You can use logcat to help debug errors if needed
+* Also you can use logcat to help debug errors if needed
