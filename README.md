@@ -6,7 +6,7 @@
 
 * I took inspiration from the code from the "Android Game Development : Endless Runner Game in Android" course on Udemy by Sandip Bhattacharya to help complete my project
 * This Udemy course game is quite different to my game:
-    * The udemy course game involves a santa character that endless runs and then you tap the screen to jump to avoid the obstacles which move from left to right on the screen.
+    * The udemy course game involves a santa character that endlessly runs and then you tap the screen to jump to avoid the obstacles which move from left to right on the screen.
 	* Everytime you jump over an obstacle you gain a point
 
 ## My game explanation
@@ -14,15 +14,15 @@
 * This game involves moving a circular green player across a 6 by 4 gridded area
 * Swipe left, right, up, down using your fingers to move this player within the grid
 * Avoid the 5 falling box obstacles and if you hit one of these the game is over
-* Within the grided area, you're not able to move into a section containing an ice obstacle
-* Once you reach the right hand side of grid area:
+* Within the gridded area, you're not able to move into a section containing an ice obstacle
+* Once you reach the right hand side of the grid area:
     * You gain one point
 	* Your character resets to the left
 	* Then you can try to reach the right side again, and repeat
 
 ## Setting up project
 
-### Where to run program
+### Where to run the program
 * I'm able to run this game on both Windows 10 and 11 using "Android Studio Jellyfish | 2023.3.1"
 
 ### How to create and run the program
@@ -58,7 +58,7 @@
 ### Help
 
 * When loading program on emulator if you get "waiting for all devices to come online" message showing for a very long time:
-    * On device manager, wipe data for device you want to use
+    * On device manager, wipe data for the device you want to use
 	* Then restart your computer and android studio
 
 * You can use logcat to help debug errors if needed
